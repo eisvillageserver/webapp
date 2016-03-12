@@ -1,0 +1,18 @@
+<div class="document-block col-xs-12 col-md-6" ng-repeat="doc in documents">
+  <div class="meta">
+    <div class="row">
+
+      <div class="info col-xs-7">
+        <h2>{{doc["Title"]}}</h2>
+        <div class="date">{{doc["DateUploaded"]}}</span>
+        <span class="description" ng-if="doc.Description === null">{{doc["Description"]}}</span>
+        <span class="description" ng-if="doc.Description !== null"><i>No Description</i></span>
+      </div>
+      <div class="download col-xs-5">
+        <a ng-href="'../../{{doc.S3URI}}"><i class="fa fa-download"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,96 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "helpers";
+
+$font-stack: Helvetica, sans-serif;
+$white: #fff;
+$lightgreen: #8da56b;
+$darkgreen: #445127;
+
+body {
+  font: 1.5em $font-stack;
+  background: url(../images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: $white;
+}
+
+#container {
+  width: 80%;
+}
+
+#content {
+  width: 100%;
+}
+
+#header {
+  width: 100%;
+  padding: 1em;
+  color: $white;
+
+  #title {
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  #subtitle {
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.category-block {
+  padding: 1em;
+
+  .info {
+    background-color: $white;
+    padding: 0.5em;
+    text-align: center;
+    color: $lightgreen;
+    font-size: 4em;
+  }
+  .name {
+    background-color: $lightgreen;
+    color: $white;
+    padding: 0.8em;
+    text-align: center;
+    font-size: 0.8em
+  }
+}
+
+.loading {
+  text-align: center;
+  font-size: 10em;
+}
+
+.document-block {
+  padding: 1em;
+
+  .meta {
+    background-color: $white;
+    padding: 0.8em;
+    color: $darkgreen;
+  }
+
+  .info {
+    color: $darkgreen;
+    font-size: 0.8em;
+  }
+}
+
+
+.download {
+  font-size: 3em;
+  text-align: center;
+  color: $lightgreen;
+}
