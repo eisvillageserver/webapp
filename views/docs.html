@@ -1,18 +1,33 @@
-<div class="document-block col-xs-12 col-md-6" ng-repeat="doc in documents">
-  <div class="meta">
-    <div class="row">
+<div class="col-xs-12 col-centered" ng-if="!loading">
 
-      <div class="info col-xs-7">
-        <h2>{{doc["Title"]}}</h2>
-        <div class="date">{{doc["DateUploaded"]}}</span>
-        <span class="description" ng-if="doc.Description === null">{{doc["Description"]}}</span>
-        <span class="description" ng-if="doc.Description !== null"><i>No Description</i></span>
+  <div class="document-block col-xs-12 col-md-6" ng-repeat="doc in documents">
+    <div class="meta">
+      <div class="row">
+
+        <div class="info col-xs-7">
+            <h2>{{doc["Title"]}}</h2>
+            <div class="date">{{doc["DateUploaded"]}}</span>
+            <span class="description" ng-if="doc.Description === null">{{doc["Description"]}}</span>
+            <div class="description">
+              <span class="description" ng-if="doc.Description !== null"><i>No Description</i></span>
+            </div>
+          </div>
+        </div>
+        <div class="download">
+          <a ng-href="'../../{{doc.S3URI}}"><i class="fa fa-download"></i></a>
+        </div>
+
       </div>
-      <div class="download col-xs-5">
-        <a ng-href="'../../{{doc.S3URI}}"><i class="fa fa-download"></i></a>
-      </div>
+
     </div>
-
   </div>
 
+  <div class="row" id="return">
+    <a href="../../#/"><i class="fa fa-reply"></i></a>
+  </div>
+
+</div>
+
+<div class="col-xs-12 col-centered loading" ng-if="loading">
+  <i class="fa fa-spinner fa-pulse"></i>
 </div>

@@ -16,6 +16,14 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'views/images.html',
       controller: 'ImgCtrl'
     })
+    .when('/Video', {
+      templateUrl: 'views/videos.html',
+      controller: 'VidCtrl'
+    })
+    .when('/Music', {
+      templateUrl: 'views/music.html',
+      controller: 'MusicCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -43,14 +51,40 @@ app.controller('DocsCtrl', function($scope, $http) {
   })
 })
 
-app.controller('FilesCtrl', function($scope, $http) {
-  $http.get(host + 'categories/').then(function(response) {
-    console.log(response);
-    $scope.categories = response.data.categories;
+app.controller('ImgCtrl', function($scope, $http) {
+  $scope.loading = true;
+  $scope.showOne = false;
+
+  $http.get(host + 'categories/images').then(function(response) {
+    $scope.images = response.data.files;
+    $scope.loading = false;
   })
 
-  $http.get('files/' + '5').then(function(response) {
-    console.log(response);
-    $scope.currentItem = response.data.files[0];
+  $scope.showSingle = function(image) {
+    $scope.showOne = true;
+    $scope.showImage = image;
+  }
+
+  $scope.showBack = function() {
+    $scope.showOne = false;
+    $scope.showImage = null;
+  }
+})
+
+app.controller('VidCtrl', function($scope, $http) {
+  $scope.loading = true;
+
+  $http.get(host + 'categories/videos').then(function(response){
+    $scope.videos = response.data.files;
+    $scope.loading = false;
+  })
+})
+
+app.controller('MusicCtrl', function($scope, $http) {
+  $scope.loading = true;
+
+  $http.get(host + 'categories/music').then(function(response){
+    $scope.music = response.data.files;
+    $scope.loading = false;
   })
 })

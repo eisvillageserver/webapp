@@ -88,9 +88,61 @@ body {
   }
 }
 
+.image {
+  max-width: 100%;
+}
+
+#gallery {
+  text-align: center;
+}
 
 .download {
   font-size: 3em;
   text-align: center;
   color: $lightgreen;
+
+
+    a {
+      color: $lightgreen;
+
+      :hover {
+        color: $darkgreen;
+      }
+    }
+}
+
+
+#return {
+  font-size: 5em;
+  text-align: center;
+
+  a {
+    color: $white;
+
+    :hover {
+      color: $lightgreen;
+    }
+  }
+}
+
+.video-info {
+  background-color: $white;
+  padding: 1em;
+  margin-bottom: 2em;
+  color: $darkgreen;
+
+  h1 {
+    color: $lightgreen;
+  }
+}
+
+.music-info {
+  background-color: $white;
+  padding: 1em;
+  margin-bottom: 2em;
+  color: $darkgreen;
+
+  h1 {
+    color: $lightgreen;
+  }
 }
