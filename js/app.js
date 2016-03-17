@@ -24,6 +24,10 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'views/music.html',
       controller: 'MusicCtrl'
     })
+    .when('/latest', {
+      templateUrl: 'views/latest.html',
+      controller: 'LatestCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -85,6 +89,14 @@ app.controller('MusicCtrl', function($scope, $http) {
 
   $http.get(host + 'categories/music').then(function(response){
     $scope.music = response.data.files;
+    $scope.loading = false;
+  })
+})
+
+app.controller('LatestCtrl', function($scope, $http) {
+  $scope.loading = true;
+  $http.get(host+'latest/').then(function(response) {
+    $scope.files = response.data.files;
     $scope.loading = false;
   })
 })
