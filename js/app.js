@@ -2,16 +2,6 @@ var app = angular.module('eisApp', ['ngRoute']);
 
 host = 'http://192.168.1.1:5000/' //Change to RPI's static ip address 'http://ipRpi:5000/'
 
-$('.image-block').isotope({
-  // set itemSelector so .grid-sizer is not used in layout
-  itemSelector: '.grid-item',
-  percentPosition: true,
-  masonry: {
-    // use element for option
-    columnWidth: '.col-xs-6 .col-md-3'
-  }
-})
-
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
