@@ -138,7 +138,7 @@ body {
 
 /* line 76, ../sass/style.scss */
 .document-block {
-  padding: 1em;
+  margin-bottom: 1em;
 }
 /* line 79, ../sass/style.scss */
 .document-block .meta {
@@ -178,39 +178,55 @@ body {
 }
 
 /* line 115, ../sass/style.scss */
+.white a {
+  color: #fff;
+}
+
+/* line 120, ../sass/style.scss */
+#home {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+/* line 124, ../sass/style.scss */
+#home a {
+  color: #fff;
+}
+
+/* line 129, ../sass/style.scss */
 #return {
   font-size: 5em;
   text-align: center;
 }
-/* line 119, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 #return a {
   color: #fff;
 }
-/* line 122, ../sass/style.scss */
+/* line 136, ../sass/style.scss */
 #return a :hover {
   color: #8da56b;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 .video-info {
   background-color: #fff;
   padding: 1em;
   margin-bottom: 2em;
   color: #445127;
 }
-/* line 134, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 .video-info h1 {
   color: #8da56b;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 .music-info {
   background-color: #fff;
   padding: 1em;
   margin-bottom: 2em;
   color: #445127;
 }
-/* line 145, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .music-info h1 {
   color: #8da56b;
 }

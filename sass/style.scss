@@ -74,7 +74,7 @@ body {
 }
 
 .document-block {
-  padding: 1em;
+  margin-bottom: 1em;
 
   .meta {
     background-color: $white;
@@ -111,6 +111,20 @@ body {
     }
 }
 
+.white {
+  a {
+    color: $white;
+  }
+}
+
+#home {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  a {
+    color: $white;
+  }
+}
 
 #return {
   font-size: 5em;

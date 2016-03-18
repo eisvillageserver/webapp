@@ -2,6 +2,17 @@ var app = angular.module('eisApp', ['ngRoute']);
 
 host = 'http://localhost:5000/'
 
+$('.image-block').isotope({
+  // set itemSelector so .grid-sizer is not used in layout
+  itemSelector: '.grid-item',
+  percentPosition: true,
+  masonry: {
+    // use element for option
+    columnWidth: '.col-xs-6 .col-md-3'
+  }
+})
+
+
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
@@ -24,6 +35,10 @@ app.config(function($routeProvider, $locationProvider) {
       templateUrl: 'views/music.html',
       controller: 'MusicCtrl'
     })
+    .when('/Application', {
+      templateUrl: 'views/apps.html',
+      controller: 'AppCtrl'
+    })
     .when('/latest', {
       templateUrl: 'views/latest.html',
       controller: 'LatestCtrl'
@@ -37,6 +52,16 @@ app.config(function($routeProvider, $locationProvider) {
     // });
 });
 
+app.run(function($rootScope, $http, $location) {
+    $rootScope.dlCountService = function(uid, s3uri) {
+        console.log(uid);
+
+        $http.post(host + 'count/' + uid).then(function(response) {
+          window.location = s3uri;
+        })
+    };
+});
+
 app.controller('MainCtrl', function($scope, $http) {
   $scope.loading = true;
   $http.get(host + 'categories/').then(function(response) {
@@ -48,9 +73,15 @@ app.controller('MainCtrl', function($scope, $http) {
 app.controller('DocsCtrl', function($scope, $http) {
   $scope.loading = true;
   $http.get(host + 'categories/documents').then(function(response) {
-    console.log("HELLO");
-    console.log(response);
     $scope.documents = response.data.files;
+    $scope.loading = false;
+  })
+})
+
+app.controller('AppCtrl', function($scope, $http) {
+  $scope.loading = true;
+  $http.get(host + 'categories/applications').then(function(response) {
+    $scope.apps = response.data.files;
     $scope.loading = false;
   })
 })
