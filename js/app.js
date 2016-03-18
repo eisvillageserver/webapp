@@ -1,6 +1,6 @@
 var app = angular.module('eisApp', ['ngRoute']);
 
-host = 'http://localhost:5000/'
+host = 'http://192.168.1.1:5000/' //Change to RPI's static ip address 'http://ipRpi:5000/'
 
 $('.image-block').isotope({
   // set itemSelector so .grid-sizer is not used in layout
