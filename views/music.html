@@ -9,7 +9,10 @@
     </audio>
     <div class="music-info">
       <h1>{{m.Title}}</h1>
-      {{m.Description}}
+      <span class="description" ng-if="m.Description">{{m["Description"]}}</span>
+      <div class="description">
+        <span class="description" ng-if="!m.Description"><i>No Description</i></span>
+      </div>
 
       <div class="download">
         <a ng-click="dlCountService(m.UID, m.S3URI)"><i class="fa fa-download"></i></a>

@@ -3,7 +3,7 @@
 
 
   <div class="image-block">
-    <div class="col-xs-6 col-md-3 grid-item" ng-repeat="i in images" ng-if="!showOne">
+    <div class="col-xs-6 col-md-3" ng-repeat="i in images" ng-if="!showOne">
       <a ng-click="showSingle(i)" class="thumbnail">
         <img ng-src="{{i.S3URI}}" />
       </a>
@@ -13,7 +13,7 @@
 
           <img ng-src="../../{{showImage.S3URI}}"/>
 
-                <div class="download white">
+                <div class="download">
                   <a  ng-click="dlCountService(showImage.UID, showImage.S3URI)"><i class="fa fa-download"></i></a>
                 </div>
       </div>

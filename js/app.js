@@ -1,7 +1,12 @@
 var app = angular.module('eisApp', ['ngRoute']);
 
-host = 'http://192.168.1.1:5000/' //Change to RPI's static ip address 'http://ipRpi:5000/'
+host = 'http://localhost:5000/' //Change to RPI's static ip address 'http://ipRpi:5000/'
 
+
+$("#container").masonry({
+  columnWidth: '.grid-item',
+  itemSelector: '.grid-item'
+})
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider

@@ -25,6 +25,17 @@ body {
   width: 80%;
 }
 
+#latest { /* Masonry container */
+    column-count: 2;
+    column-gap: 1em;
+}
+
+.grid-item { /* Masonry bricks or child elements */
+    display: inline-block;
+    margin: 0 0 0.5em;
+    width: 100%;
+}
+
 #content {
   width: 100%;
 }
@@ -74,7 +85,6 @@ body {
 }
 
 .document-block {
-  margin-bottom: 1em;
 
   .meta {
     background-color: $white;

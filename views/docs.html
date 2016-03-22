@@ -6,10 +6,10 @@
 
         <div class="info col-xs-7">
             <h2>{{doc["Title"]}}</h2>
-            <div class="date">{{doc["DateUploaded"]}}</span>
-            <span class="description" ng-if="doc.Description === null">{{doc["Description"]}}</span>
+            <!-- <div class="date">{{doc["DateUploaded"]}}</span> -->
+            <span class="description" ng-if="doc.Description">{{doc["Description"]}}</span>
             <div class="description">
-              <span class="description" ng-if="doc.Description !== null"><i>No Description</i></span>
+              <span class="description" ng-if="!doc.Description"><i>No Description</i></span>
             </div>
           </div>
         </div>

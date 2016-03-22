@@ -1,9 +1,8 @@
 <div class="row latest" style="padding:0" ng-if="!loading">
 
-  <div class="all-block col-xs-12 col-md-6" ng-repeat="f in files">
+  <div class="all-block col-xs-12 col-md-6" id="latest" ng-repeat="f in files">
     <div class="grid-item" ng-if="f.Category == 'Image'">
-      <div class="image-block thumbnail">
-
+      <div class="thumbnail">
         <img ng-src="{{f.S3URI}}"/>
         <div class="download">
           <a ng-click="dlCountService(f.UID, f.S3URI)"><i class="fa fa-download"></i></a>
@@ -44,7 +43,7 @@
 
             <div class="info col-xs-12">
                 <h2>{{f["Title"]}}</h2>
-                <div class="date">{{f["DateUploaded"]}}</span>
+                <!-- <div class="date">{{f["DateUploaded"]}}</span> -->
                 <span class="description" ng-if="f.Description === null">{{f["Description"]}}</span>
                 <div class="description">
                   <span class="description" ng-if="f.Description !== null"><i>No Description</i></span>
@@ -69,7 +68,7 @@
 
             <div class="info col-xs-12">
                 <h2>{{f["Title"]}}</h2>
-                <div class="date">{{f["DateUploaded"]}}</span>
+                <!-- <div class="date">{{f["DateUploaded"]}}</span> -->
                 <span class="description" ng-if="f.Description === null">{{f["Description"]}}</span>
                 <div class="description">
                   <span class="description" ng-if="f.Description !== null"><i>No Description</i></span>
