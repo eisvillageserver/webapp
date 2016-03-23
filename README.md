@@ -1,4 +1,7 @@
 # webapp
+
+NOTE: This repository is no longer updated, all relevant code is moved to INTEGRATION
+
 The webapp repository contains the UI code involved with the village facing web application. This web application allows you to download files hosted by the village server.
 
 ## Setup
